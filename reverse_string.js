@@ -6,3 +6,4 @@ function reverseString(str){
     }
     return newStr;
 }
+reverseString("Coding Dojo");
