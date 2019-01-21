@@ -11,15 +11,7 @@ function arrInsertAt(arr,index, val){
     
         for (var i = index+1; i < arr.length+1; i++) {
             console.log('Loop i value = '+i);
-            // nextTemp = arr[i+1];
-            // arr[i] = a;
-            // a = arr[i+1];
-            // temp = nextTemp;
-            
-            // if(i==9){
-            //     console.log('at the end');
-            //     break;
-            // }
+
         }
     }
     console.log(arr);
