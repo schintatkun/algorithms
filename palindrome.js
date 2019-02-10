@@ -1,4 +1,5 @@
 //Stack
+//Using stack solve palindrome problem
 var letters = [];
 
 var word = "bob";
