@@ -59,7 +59,7 @@ class AddFrontSLL {
         secondNode.next = thirdNode;
 
 
-        //call AddFrontSLL function
+        //call AddFront function
         myList.AddFront(99);
 
         // print all value in Linked List
