@@ -28,6 +28,15 @@ class SLL {
         }
     }
 
+    //AddFront - add new node to the front of SLL
+
+    public void AddFront(int val){
+        Node new_node = new Node(val);
+        new_node.next = head;
+        head = new_node;
+    }
+
+
 
     public static void main(String[] args){
 
@@ -47,6 +56,9 @@ class SLL {
 
         //point 2nd node to 3rd node
         secondNode.next = thirdNode;
+
+        //add new node by calling Addfront function
+        myList.AddFront(55);
 
 
         // print all value in Linked List
