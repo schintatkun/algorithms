@@ -36,7 +36,27 @@ class SLL {
         head = new_node;
     }
 
+    //Insert node - insert new node to the back
+    public void insertNode(SLL mySLL, int val){
 
+        //create new node from input value
+        Node new_node = new Node(val);
+        new_node.next = null;
+
+        //check if SLL is empty, then make a new node as head of SLL
+        if (mySLL.head == null){
+            mySLL.head = new_node;
+        }
+        else{
+            //set pointer "runner" to traverse whole SLL till last node
+            Node runner = mySLL.head;
+            while (runner.next != null){
+                runner = runner.next;
+            }
+            runner.next = new_node;
+        }
+
+    }
 
     public static void main(String[] args){
 
@@ -60,6 +80,8 @@ class SLL {
         //add new node by calling Addfront function
         myList.AddFront(55);
 
+        //insert new node
+        myList.insertNode(myList, 7);
 
         // print all value in Linked List
         myList.PrintSLL();
