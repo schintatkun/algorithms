@@ -36,7 +36,7 @@ class SLL {
         head = new_node;
     }
 
-    //Insert node - insert new node to the back
+    //Insert node - insert new node to the end
     public void insertNode(SLL mySLL, int val){
 
         //create new node from input value
@@ -55,6 +55,34 @@ class SLL {
             }
             runner.next = new_node;
         }
+
+    }
+
+    // Delete Node by value
+    public void deleteNode(SLL mySLL, int val){
+
+    //set current node as a runner pointer    
+    Node runner = head, prev = null;
+    
+    //if value we are looking for is at head of SLL
+    if (runner != null && runner.value == val ){
+        System.out.println("Found node at head of SLL");
+    }
+
+    while (runner != null && runner.value != val){
+        prev = runner;
+        runner = runner.next;
+    }
+
+    //if value we're looking for is at runner, which mean isn't null
+    //remove current node (at runner position)
+    if (runner != null){
+        prev.next = runner.next;
+        System.out.println(val+" is found and deleted!");
+    }
+    if (runner == null){
+        System.out.println(val+ " isn't found in SLL");
+    }
 
     }
 
@@ -84,6 +112,9 @@ class SLL {
         myList.insertNode(myList, 7);
 
         // print all value in Linked List
+        myList.PrintSLL();
+
+        myList.deleteNode(myList, 2);
         myList.PrintSLL();
     }
 
