@@ -69,6 +69,7 @@ class SLL {
         System.out.println("Found node at head of SLL");
     }
 
+    //traverse to SLL and look for a given value
     while (runner != null && runner.value != val){
         prev = runner;
         runner = runner.next;
@@ -80,6 +81,7 @@ class SLL {
         prev.next = runner.next;
         System.out.println(val+" is found and deleted!");
     }
+    //given value is not exist in SLL
     if (runner == null){
         System.out.println(val+ " isn't found in SLL");
     }
