@@ -12,4 +12,22 @@ def linear_search(Data, num):
             return True
     return False
 
-print(linear_search(myData, target))
+print("linear serach",linear_search(myData, target))
+
+# Iterative binary search
+def binary_search(data, num):
+    low = 0
+    high = len(data)-1
+
+    while low <= high:
+        mid = (low+high) /2
+        print(mid)
+        if target == data[mid]:
+            return True
+        elif target < data[mid]:
+            high = mid-1
+        else:
+            low = mid+1
+    return False
+
+print("Iterative binary search", binary_search(myData,target))
