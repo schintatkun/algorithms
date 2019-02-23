@@ -61,32 +61,73 @@ class SLL {
     // Delete Node by value
     public void deleteNode(SLL mySLL, int val){
 
-    //set current node as a runner pointer    
-    Node runner = head, prev = null;
-    
-    //if value we are looking for is at head of SLL
-    if (runner != null && runner.value == val ){
-        System.out.println("Found node at head of SLL");
+        //set current node as a runner pointer    
+        Node runner = head, prev = null;
+        
+        //if value we are looking for is at head of SLL
+        if (runner != null && runner.value == val ){
+            System.out.println("Found node at head of SLL");
+        }
+
+        //traverse to SLL and look for a given value
+        while (runner != null && runner.value != val){
+            prev = runner;
+            runner = runner.next;
+        }
+
+        //if value we're looking for is at runner, which mean isn't null
+        //remove current node (at runner position)
+        if (runner != null){
+            prev.next = runner.next;
+            System.out.println(val+" is found and deleted!");
+        }
+        //given value is not exist in SLL
+        if (runner == null){
+            System.out.println(val+ " isn't found in SLL");
+        }
+
     }
 
-    //traverse to SLL and look for a given value
-    while (runner != null && runner.value != val){
-        prev = runner;
-        runner = runner.next;
+    // Delete Node by position
+    public void deleteNodePosition(SLL mySLL, int idx){
+        
+        //set current node as a runner pointer
+        Node runner = mySLL.head, prev = null;
+
+        // if idx = 0, then head node itself is to be deleted.
+        if (idx == 0 && runner != null){
+            //change head
+            mySLL.head = runner.next;
+            System.out.println("Deleted node at head");
+            //return mySLL;
+        }
+
+        //if idx is greater than 0, but less than size of SLL
+
+        int counter = 0;
+
+        while (runner != null) {
+            if (counter == idx){
+                prev.next = runner.next;
+                break;
+            }else {
+                //if current runner is not the idx we are looking for, then continue to next node
+                prev = runner;
+                runner = runner.next;
+                counter ++; //increment counter
+            }
+        }
+
+        //idx is greater than size of SLL
+        //runner should be at null
+
+        if (runner == null){
+            System.out.println("Position element not found");
+        }
+
+        //return mySLL;
     }
 
-    //if value we're looking for is at runner, which mean isn't null
-    //remove current node (at runner position)
-    if (runner != null){
-        prev.next = runner.next;
-        System.out.println(val+" is found and deleted!");
-    }
-    //given value is not exist in SLL
-    if (runner == null){
-        System.out.println(val+ " isn't found in SLL");
-    }
-
-    }
 
     public static void main(String[] args){
 
@@ -116,7 +157,8 @@ class SLL {
         // print all value in Linked List
         myList.PrintSLL();
 
-        myList.deleteNode(myList, 2);
+        // myList.deleteNode(myList, 2);
+        myList.deleteNodePosition(myList, 2);
         myList.PrintSLL();
     }
 
