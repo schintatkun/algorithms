@@ -128,6 +128,22 @@ class SLL {
         //return mySLL;
     }
 
+    //get size of SLL
+    public Integer getSize(){
+        Node runner = head;
+        int counter = 0;
+
+        if (runner == null) {
+            return 0;
+        }else{
+            while (runner != null){
+                runner = runner.next;
+                counter ++;
+            }
+        }
+        System.out.println("size of SLL = " + counter);
+        return counter;
+    }
 
     public static void main(String[] args){
 
@@ -153,6 +169,9 @@ class SLL {
 
         //insert new node
         myList.insertNode(myList, 7);
+
+        //find size of SLL
+        myList.getSize();
 
         // print all value in Linked List
         myList.PrintSLL();
