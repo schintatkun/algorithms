@@ -14,6 +14,9 @@ def is_unique(inputStr):
             d[i] = 1
     return True
 
+def is_unique2(inputStr):
+    return len(set(inputStr))== len(inputStr)
+
 #normalize input string
 
 str1 = normalize(str1)
@@ -21,3 +24,6 @@ str2 = normalize(str2)
 
 print(is_unique(str1))
 print(is_unique(str2))
+
+print(is_unique2(str1))
+print(is_unique2(str2))
