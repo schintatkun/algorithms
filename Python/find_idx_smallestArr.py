@@ -1,5 +1,7 @@
+# given unsorted array, find index of smallest number in array
 A = [4,5,6,7,1,2,3]
 
+# Apply Binary search apporch to solve problem
 def find(A):
     low = 0 
     high = len(A) -1 
