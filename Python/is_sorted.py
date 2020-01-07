@@ -12,5 +12,12 @@ def is_sorted(itemlist):
     return True
 
 
+def is_sorted2(itemlist):
+    return all(itemlist[i] <= itemlist[i+1] for i in range(len(itemlist)-1))
+
+
 print(is_sorted(list1))
 print(is_sorted(list2))
+print("--------")
+print(is_sorted2(list1))
+print(is_sorted2(list2))
