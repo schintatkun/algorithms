@@ -35,10 +35,12 @@ function PriorityQueue() {
   };
 }
 
+// Testing a result
 var priorityQ = new PriorityQueue();
-priorityQ.enqueue(["Anakin Skywalker", 2]);
-priorityQ.enqueue(["Obiwan Kenobi", 3]);
+priorityQ.enqueue(["Anakin Skywalker", 3]);
+priorityQ.enqueue(["Obiwan Kenobi", 2]);
 priorityQ.enqueue(["Master Yoda", 1]);
+priorityQ.enqueue(["Master Windu", 1]);
 priorityQ.printCollection();
 priorityQ.dequeue();
 priorityQ.front();
