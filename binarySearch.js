@@ -7,7 +7,7 @@ class Node {
     this.right = right;
   }
 }
-
+// class Binaray Search Tree
 class BST {
   constructor() {
     this.root = null;
@@ -39,5 +39,13 @@ class BST {
       };
       return searchTree(node);
     }
+  }
+  // find minimum value
+  findMin() {
+    let current = this.root;
+    while (current.left !== null) {
+      current = current.left;
+    }
+    return current.data;
   }
 }
