@@ -48,4 +48,12 @@ class BST {
     }
     return current.data;
   }
+  // find maximum value
+  findMax() {
+    let current = this.root;
+    while (current.right !== null) {
+      current = current.right;
+    }
+    return current.data;
+  }
 }
