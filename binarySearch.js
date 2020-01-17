@@ -124,6 +124,19 @@ class BST {
     };
     this.root = removeNode(this.root, data);
   }
+  // find min height
+  findMinHeight(node = this.root) {
+    if (node == null) {
+      retuurn - 1;
+    }
+    let left = this.findMinHeight(node.left);
+    let right = this.findMinHeight(node.right);
+    if (left < right) {
+      return left + 1;
+    } else {
+      return right + 1;
+    }
+  }
 }
 const bst = new BST();
 bst.add(4);
