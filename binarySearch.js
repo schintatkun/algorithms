@@ -150,6 +150,10 @@ class BST {
       return right + 1;
     }
   }
+  // find if a tree is balanced
+  isBalanced() {
+    return this.findMinHeight() >= this.findMaxHeight() - 1;
+  }
 }
 const bst = new BST();
 bst.add(4);
