@@ -154,6 +154,21 @@ class BST {
   isBalanced() {
     return this.findMinHeight() >= this.findMaxHeight() - 1;
   }
+
+  inOrder() {
+    if (this.root == null) {
+      return null;
+    } else {
+      var result = new Array();
+      function traverseInOrder(node) {
+        node.left && traverseInOrder(node.left);
+        result.push(node.data);
+        node.right && traverseInOrder(node.right);
+      }
+      traverseInOrder(this.root);
+      return result;
+    }
+  }
 }
 const bst = new BST();
 bst.add(4);
