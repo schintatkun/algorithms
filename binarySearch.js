@@ -184,6 +184,27 @@ class BST {
       return result;
     }
   }
+
+  levelOrder() {
+    let result = [];
+    let queue = [];
+    if (this.root != null) {
+      queue.push(this.root);
+      while (queue.length > 0) {
+        let node = queue.shift();
+        result.push(node.data);
+        if (node.left != null) {
+          queue.push(node.left);
+        }
+        if (node.right != null) {
+          queue.push(node.right);
+        }
+      }
+      return result;
+    } else {
+      return null;
+    }
+  }
 }
 const bst = new BST();
 bst.add(4);
