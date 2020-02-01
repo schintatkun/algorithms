@@ -59,4 +59,17 @@ let HashTable = function() {
       }
     }
   };
+  // look up
+  this.lookup = function(key) {
+    var index = hash(key, storageLimit);
+    if (storage[index] === undefined) {
+      return undefined;
+    } else {
+      for (var i = 0; i < storage[index].length; i++) {
+        if (storage[index][i][0] === key) {
+          return storage[index][i][1];
+        }
+      }
+    }
+  };
 };
